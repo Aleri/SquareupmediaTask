@@ -241,7 +241,7 @@ input[type=checkbox]:checked ~ #menu{
 .newsletter-summary, .sign-uptext {
     text-align: center;
     font-size: 1.1em;
-    
+
 }
 
 /*Styles for the form*/
@@ -252,7 +252,7 @@ input[type=checkbox]:checked ~ #menu{
     margin-top: 60px;
 }
 
-.newsletter-signup-form label,  
+.newsletter-signup-form label,
 .newsletter-signup-form input[type="text"],
 .newsletter-signup-form input[type="email"] {
     display: inline-block;
@@ -297,7 +297,7 @@ input[type=checkbox]:checked ~ #menu{
         font-size: 13px; margin-right:10px; line-height:18px;
     }
     input[type=checkbox] {
-        display:none; 
+        display:none;
     }
     .checkbox:after {
         content: "";
@@ -309,7 +309,7 @@ input[type=checkbox]:checked ~ #menu{
         background-color: #CACACA;
         color: #f3f3f3;
         text-align: center;
-        box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8); 
+        box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
         border-radius: 10px;
     }
     input[type=checkbox]:checked + .checkbox:after {
@@ -418,11 +418,56 @@ input[type="submit"]  {
     text-transform: uppercase;
 }
 
+.device-menu {
+  background-color: black;
+  color: white;
+  display:none;
+}
+
+.device-menu a,
+.device-menu a:visited,
+.device-menu a:link {
+  color: white;
+  float:right;
+  margin-right: 20px;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.3em;
+}
+
+
+/*Sliderbars*/
+
+.sb-left .sb-menu li a {
+  border-left: 3px solid rgba(0, 0, 0, 0);
+  text-decoration: none;
+}
+
+.sb-menu li a {
+  width: 100%;
+  display: inline-block;
+  padding: 1em;
+  color: #F2F2F2;
+}
+
+.sb-menu li {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+nav ul.sb-menu  {
+  padding: 0;
+}
+
 /*Media queries*/
 
 @media only screen and (max-width: 1012px) {
 
-    .newsletter-signup-form label,  
+    .newsletter-signup-form label,
     .newsletter-signup-form input[type="text"],
     .newsletter-signup-form input[type="email"] {
         display: inline-block;
@@ -449,6 +494,18 @@ input[type="submit"]  {
 
     .side-content{
         width: 40%;
+    }
+
+    .device-menu {
+        display:block;
+    }
+
+    .menu {
+      display:none;
+    }
+
+    .main-content {
+      margin-top: 0;
     }
 }
 
@@ -483,15 +540,6 @@ input[type="submit"]  {
         margin-right: auto;
     }
 
-     .newsletter-signup-form label,  
-    .newsletter-signup-form input[type="text"],
-    .newsletter-signup-form input[type="email"] {
-        display: inline-block;
-        float: left;
-        margin-bottom: 4px;
-        font-size: 0.7em;
-        min-width: 70px;
-    }
 
     .newsletter-signup-form input {
         min-width: 70px;
@@ -522,15 +570,6 @@ input[type="submit"]  {
 
     .side-content{
         width: 45%;
-    }
-
-     .newsletter-signup-form label,  
-    .newsletter-signup-form input[type="text"],
-    .newsletter-signup-form input[type="email"] {
-        display: inline-block;
-        float: left;
-        margin-bottom: 4px;
-        font-size: 0.7em;
     }
 
     .newsletter-signup-form input {
@@ -630,17 +669,6 @@ input[type="submit"]  {
         margin-right: 30px;
     }
 
-    ul {
-        background: black;
-        position: static;
-        display: none;
-        height: 100%;
-        width: 100%;
-        padding-left: 0px;
-        margin-top: -2px;
-        text-align: center;
-        margin-left: -340px;
-    }
     .menu {
         position: absolute;
         top: 0px;
@@ -668,6 +696,9 @@ input[type="submit"]  {
         margin-bottom: 0px;
     }
 
+    /*Sliderbars*/
+
+
 }
 
 @media only screen and (max-width: 540px) {
@@ -688,6 +719,7 @@ input[type="submit"]  {
     .menu li {
         display: inline-block;
         padding-right: 6px;
+        margin-left: 35px;
     }
 
     .menu li a {
@@ -757,16 +789,16 @@ input[type="submit"]  {
 
     .magazine-content {
         min-width: 160px;
-        font-size: 0.2em;
+        font-size: 0.8em;
     }
 
     .side-content {
         min-width: 160px;
-        font-size: 0.2em;
+        font-size: 0.8em;
     }
 
     .newsletter-signup-form {
-       
+
         display: block;
     }
 

@@ -12,16 +12,17 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <!-- Imported Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/slidebars.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-       
+
     </head>
     <body>
 
@@ -31,6 +32,9 @@
             </div>
 
             <div class="container">
+            <div class="device-menu clearfix">
+                <a href="#" class="sb-toggle-left">Menu</a>
+            </div>
                 <div class="title">
                     <img class="title_logo" title="Squareup page logo" src="img/squareup_logo.gif">
                 </div>
@@ -49,6 +53,7 @@
                             <li>
                                  <a title="Brands" href="#">Brands</a>
                             </li>
+
                         </ul>
                     </nav>
                     <!--Content Section -->
@@ -114,11 +119,33 @@
             </div>
         </div>
 
-       <script src="js/vendor/jquery-1.11.1.min.js"></script>
-       <script src="js/main.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
- 
-        
+        <div class="sb-slidebar sb-left sb-style-push">
+          <nav>
+            <ul class="sb-menu">
+              <li class="sb-close">
+                <a title="About" href="#">About</a>
+              </li>
+              <li class="sb-close">
+                <a title="Contact" href="#">Contact</a>
+              </li>
+              <li class="sb-close">
+                <a title="Brands" href="#">Brands</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <script src="js/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/vendor/slidebars.js"></script>
+        <script>
+          $(window).load(function(){
+            $.slidebars();
+          });
+        </script>
+
+
+
     </body>
 </html>
