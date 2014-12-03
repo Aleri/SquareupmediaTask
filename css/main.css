@@ -62,7 +62,7 @@ textarea {
    ========================================================================== */
 
 /*Fonts*/
-.newsletter-summary, .sign-uptext, label, input, .article-title, .magazine-content p, .follow-text, .ipad-edition-title, .ipad-edition-body, .leaderboard-text, .footer-copywright {
+.newsletter-summary, .sign-uptext, label, input, .article-title, .magazine-content p, .follow-text, .ipad-edition-title, .ipad-edition-body, .leaderboard-text, .footer-copywright{
     font-family: 'Oswald', sans-serif;
 }
 
@@ -148,7 +148,34 @@ body {
 .menu li a:hover, .menu li a:focus{
     color: gray;
     outline: none;
+    display: block;
 }
+
+/*Show menu hidden by default*/
+.show-menu {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 21px;
+    padding-bottom: 0px;
+    display: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    width: auto;
+    margin-left: -132px;
+}
+
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
 
 /*Styles for the main content area*/
 
@@ -171,6 +198,7 @@ body {
     max-width: 610px;
     margin-right: 40px;
     margin-left:30px;
+    height: auto;
 }
 
 .magazine-content p > a {
@@ -247,37 +275,59 @@ body {
 }
 
 .overlay {
-        width: 10px;
-        height: 10px;
-        margin-right: -24px;
-        padding: 4px;
-        display: inline-block;
-        position: relative;
-        top: -2px;
-        border: 1px solid #aaa;
-        border-radius: 100%;
-        vertical-align: middle;
-        background: white;
-        float: right;
+    width: 10px;
+    height: 10px;
+    padding: 4px;
+    display: inline-block;
+    margin-top:auto;
+    margin-bottom:auto;
+    position: relative;
+    top: -2px;
+    border: 1px solid #aaa;
+    border-radius: 100%;
+    vertical-align: middle;
+    background: white;
+    margin-left:10%;
 }
 
-input[type="radio"] {
+/*Checkbox style*/
+.checkbox {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 13px; margin-right:10px; line-height:18px;
+    }
+    input[type=checkbox] {
+        display:none; 
+    }
+    .checkbox:after {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-left: 14px;
+        vertical-align:middle;
+        background-color: #CACACA;
+        color: #f3f3f3;
+        text-align: center;
+        box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8); 
+        border-radius: 10px;
+    }
+    input[type=checkbox]:checked + .checkbox:after {
+        content: "\2713";
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+        font-size: 15px;
+        color: black;
+    }
+
+
+input[type="checkbox"] {
     display: none;
 }
 
- input:checked + span:before {
-    width: 10px;
-    height: 10px;
-    margin: 0px;
-    float: right;
-    display: inline-block;
-    content: " ";
-    background-color: #666;
-    border-radius: 100%;
-}
 
 label[for="terms"] {
-    width: 80%;
+    display: block;
+    width: 100%;
     font-size: 0.8em;
 }
 
@@ -351,10 +401,11 @@ input[type="submit"]  {
 /*Style for the hr element*/
 
 .content-devider {
-    width: 964px;
+    display: block;
+    width: 94%;
     margin-top:0px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*Style for footer copywright text*/
@@ -382,6 +433,7 @@ input[type="submit"]  {
 
     label[for="terms"] {
         font-size: 0.7em;
+        display: block;
     }
 
     .overlay {
@@ -391,11 +443,24 @@ input[type="submit"]  {
     .newsletter-signup-form input {
         min-width: 100px;
     }
+        .main-content {
+        max-width: 60%;
+    }
 
+    .side-content{
+        width: 40%;
+    }
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 870px) {
 
+    .main-content {
+        max-width: 60%;
+    }
+
+    .side-content{
+        width: 40%;
+    }
     .escapism_logo {
         margin-left: 14px;
         min-width: 120px;
@@ -406,12 +471,57 @@ input[type="submit"]  {
         min-width: 260px;
         max-height: 346px;
     }
+
+    .newsletter-signup-form {
+        min-width: 100%;
+    }
+
+     .social {
+        display: block;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+     .newsletter-signup-form label,  
+    .newsletter-signup-form input[type="text"],
+    .newsletter-signup-form input[type="email"] {
+        display: inline-block;
+        float: left;
+        margin-bottom: 4px;
+        font-size: 0.7em;
+        min-width: 70px;
+    }
+
+    .newsletter-signup-form input {
+        min-width: 70px;
+    }
+
+    .content {
+        -webkit-border-top-left-radius: 260px;
+        -moz-border-radius-topleft: 260px;
+        border-top-left-radius: 260px;
+    }
+
+    .spotlight-img {
+        -webkit-border-bottom-right-radius: 260px;
+        -moz-border-radius-bottomright: 260px;
+        border-bottom-right-radius: 260px;
+    }
 }
 
-@media only screen and (max-width: 812px) {
+@media only screen and (max-width: 852px) {
 
     .escapism_logo {
         margin-left: 10px;
+    }
+
+    .main-content {
+        max-width: 55%;
+    }
+
+    .side-content{
+        width: 45%;
     }
 
      .newsletter-signup-form label,  
@@ -448,43 +558,128 @@ input[type="submit"]  {
 }
 
 @media only screen and (max-width: 768px) {
+    .main-content, .side-content {
+        height: auto;
+    }
+
     .main-content {
         float:none;
+        max-width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .magazine-content {
+        max-width: 100%;
     }
 
     .magazine-img {
-        margin-top:-70px;
+        display: block;
+        margin-left:auto;
+        margin-right: auto;
         max-width: 230px;
         max-height: 316px;
     }
 
     .side-content {
-        margin-top: -90px;
-        margin-left: 14px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        min-width: 400px;
+        margin-bottom: auto;
+        margin-top:0px;
+    }
+
+    .newsletter-box {
+        margin-top: 0px;
     }
 
     .escapism_logo {
-        margin-left: 0px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
+
+    .newsletter-signup-form {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 300px;
+        width: 300px;
+    }
+
+    .social {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social-media{
+        display: block;
+        margin-left:auto;
+        margin-right: auto;
+    }
+
+    .magazine-img {
+        max-width: 300px;
+        max-height: 406px;
+        }
 
 
     hr {
-        max-width: 700px;
+        max-width: 100%;
         margin-right: 30px;
     }
 
-    .menu {
-        padding-left: 160px;
+    ul {
+        background: black;
+        position: static;
+        display: none;
+        height: 100%;
+        width: 100%;
+        padding-left: 0px;
+        margin-top: -2px;
+        text-align: center;
+        margin-left: -340px;
     }
-
-
-    .side-content {
-        min-width: 400px;
+    .menu {
+        position: absolute;
+        top: 0px;
+        background: black;
+        margin-left: auto;
+        max-height: 50px;
+    }
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 10px;
+        display: block;
+        padding-left: 0px;
+        margin-left:auto;
+        width: 100%;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+        width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .show-menu {
+        float:left;
+        display: block;
+        height: 30px;
+        margin-bottom: 0px;
     }
 
 }
 
 @media only screen and (max-width: 540px) {
+    .main-content {
+        margin-bottom: auto;
+    }
+
+    .side-content {
+        margin-top: auto;
+        min-width: 300px;
+    }
+
     .leaderboard-text {
         font-size: 2em;
         padding-top: 20px;
@@ -515,17 +710,186 @@ input[type="submit"]  {
         font-size: 0.9em;
     }
 
-    .side-content {
-        min-width: 300px;
-        margin-top:-300px;
-    }
-
     hr {
         max-width: 500px;
     }
 
+
+     .content {
+        -webkit-border-top-left-radius: 240px;
+        -moz-border-radius-topleft: 240px;
+        border-top-left-radius: 240px;
+    }
+
+    .spotlight-img {
+        -webkit-border-bottom-right-radius: 240px;
+        -moz-border-radius-bottomright: 240px;
+        border-bottom-right-radius: 240px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+     .content {
+        -webkit-border-top-left-radius: 200px;
+        -moz-border-radius-topleft: 200px;
+        border-top-left-radius: 200px;
+    }
+
+    .spotlight-img {
+        -webkit-border-bottom-right-radius: 200px;
+        -moz-border-radius-bottomright: 200px;
+        border-bottom-right-radius: 200px;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+     .content {
+        -webkit-border-top-left-radius: 180px;
+        -moz-border-radius-topleft: 180px;
+        border-top-left-radius: 180px;
+    }
+
+    .spotlight-img {
+        -webkit-border-bottom-right-radius: 180px;
+        -moz-border-radius-bottomright: 180px;
+        border-bottom-right-radius: 180px;
+    }
+
+    .magazine-content {
+        min-width: 160px;
+        font-size: 0.2em;
+    }
+
+    .side-content {
+        min-width: 160px;
+        font-size: 0.2em;
+    }
+
+    .newsletter-signup-form {
+       
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width:300px) {
+
+ .content {
+        -webkit-border-top-left-radius: 160px;
+        -moz-border-radius-topleft: 160px;
+        border-top-left-radius: 160px;
+    }
+
+    .spotlight-img {
+        -webkit-border-bottom-right-radius: 160px;
+        -moz-border-radius-bottomright: 160px;
+        border-bottom-right-radius: 160px;
+    }
+
+    .newsletter-signup-form {
+        min-width: 200px;
+        width: 200px;
+        max-width: 300px;
+    }
+
+    .magazine-img {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .escapism_logo {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    ul {
+        margin-left: -344px;
+    }
+
     .social {
-        margin-bottom: -40px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width:260px) {
+
+ .content {
+        -webkit-border-top-left-radius: 100px;
+        -moz-border-radius-topleft: 100px;
+        border-top-left-radius: 100px;
+    }
+
+    .spotlight-img {
+        -webkit-border-bottom-right-radius: 100px;
+        -moz-border-radius-bottomright: 100px;
+        border-bottom-right-radius: 100px;
+    }
+
+     .magazine-img {
+        width: 80%;
+        max-width: 80%;
+        min-width: 70%;
+    }
+
+      .newsletter-signup-form {
+        min-width: 150px;
+        max-width: 150px;
+        width: 150px;
+    }
+
+    .newsletter-signup-form input label {
+        display: block;
+    }
+
+    .newsletter-signup-form input[type="submit"] {
+        min-width: 50px;
+    }
+
+    .leaderboard-text {
+        font-size: 1.4em;
+    }
+
+    .title_logo {
+        width: 90%;
+        max-width: 90%;
+        min-width: 90%;
+    }
+}
+
+
+@media only screen and (max-width:200px) {
+
+ .content {
+        -webkit-border-top-left-radius: 40px;
+        -moz-border-radius-topleft: 40px;
+        border-top-left-radius: 40px;
+    }
+
+    .spotlight-img {
+        -webkit-border-bottom-right-radius: 40px;
+        -moz-border-radius-bottomright: 40px;
+        border-bottom-right-radius: 40px;
+        min-width: 180px;
+    }
+
+      .magazine-img {
+        width: 160px;
+        max-width: 160px;
+        min-width: 160px;
+    }
+
+    .foot-content {
+        min-width: 150px;
+    }
+
+       .title_logo {
+        width: 180px;
+        max-width: 180px;
+        min-width: 180px;
+    }
+
+    .content-devider {
+        min-width: 180px;
     }
 }
 

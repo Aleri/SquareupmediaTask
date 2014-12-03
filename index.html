@@ -35,8 +35,11 @@
                     <img class="title_logo" title="Squareup page logo" src="img/squareup_logo.gif">
                 </div>
                 <div class="content clearfix">
+
                     <nav class="menu">
-                        <ul>
+                        <label for="show-menu" class="show-menu">Menu</label>
+                        <input type="checkbox" id="show-menu" role="button">
+                        <ul id="menu">
                             <li>
                                 <a title="About" href="#">About</a>
                             </li>
@@ -68,16 +71,17 @@
                             <p class="newsletter-summary">Escapism magazine takes a fresh look at global travel, featuring inspirational writing from some of the most exciting voices in travel, and photography and design that transports readers from busy London streets to amazing locations across the globe.</p>
                             <p class="sign-uptext">Sign up for notification below:</p>
 
-                            <form class="clearfix newsletter-signup-form" id="newsletter-form" action="#" method="POST">
+                            <form class="clearfix newsletter-signup-form" id="newsletter-form" onsubmit="return validateForm();" method="POST" >
                                 <label for="firstname">Firstname</label>
-                                <input type="text" name="firstname" id="firstname" required/>
+                                <input type="text" name="firstname" id="firstname" />
                                 <label for="surename">Surename</label>
-                                <input type="text" name="surename" id="surename" required/>
+                                <input type="text" name="surename" id="surename" />
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" required/>
-                                <label for="terms">I agree to the <a class="conditions" href="#"> terms and conditions</a><input type="radio" name="terms" value="terms" id="terms" required><span class="overlay"></span></label>
-                                 
-                                <input type="submit" value="Notify me!" content="Notify me!"/>
+                                <input type="email" name="email" id="email" />
+                                <input id="terms" name="terms" type="checkbox" />
+                                <label class="checkbox" for="terms"> I agree to the <a class="conditions" href="#"> terms and conditions</a> </label>
+                                <div style="display:none" id="hidden">Please accept terms!</div>
+                                <input type="submit" value="Notify me!" content="Notify me!" id="form-submit"/>
                             </form>
                         </div>
 
@@ -110,9 +114,11 @@
             </div>
         </div>
 
+       <script src="js/vendor/jquery-1.11.1.min.js"></script>
+       <script src="js/main.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-
-        <script src="js/main.js"></script>
+ 
+        
     </body>
 </html>
